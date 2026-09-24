@@ -1,6 +1,7 @@
 import uuid
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, status, Request
+from fastapi.responses import FileResponse # Add this import
 
 from app.core.security import SecurityHeadersMiddleware, PayloadSizeLimitMiddleware
 from app.api.routes import router as api_router
@@ -15,7 +16,7 @@ logger = setup_logger(__name__)
 async def lifespan(app: FastAPI):
     try:
         RulesConfig.load("config/rules.yaml")
-        logger.info("Rules loaded successfully on startup.")
+        logger.info("Application startup complete.")
     except Exception as e:
         logger.error(f"Failed to load rules on startup: {e}")
     yield
@@ -23,10 +24,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Secure Parcel Routing Engine", lifespan=lifespan)
 
-# Register the global exception handler
 app.add_exception_handler(Exception, global_exception_handler)
 
-# 1. Request ID Generation Middleware (Runs first)
 @app.middleware("http")
 async def request_id_middleware(request: Request, call_next):
     req_id = str(uuid.uuid4())
@@ -34,13 +33,19 @@ async def request_id_middleware(request: Request, call_next):
     monitor.record_request()
     
     response = await call_next(request)
-    
-    # Return the ID in the header so the client can quote it for support
     response.headers["X-Request-ID"] = req_id
     return response
 
-# 2. Security Middlewares
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(PayloadSizeLimitMiddleware)
-
 app.include_router(api_router)
+
+# --- ADD THIS ROUTE FOR THE UI ---
+@app.get("/", include_in_schema=False)
+async def serve_ui():
+    return FileResponse("app/static/index.html")
+
+@app.get("/health", status_code=status.HTTP_200_OK)
+async def health_check():
+    logger.info("Health check endpoint pinged.")
+    return {"status": "healthy"}

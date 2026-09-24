@@ -15,7 +15,6 @@ class MetricsMonitor:
         self._check_alerts()
 
     def _check_alerts(self):
-        # Trigger an alert every 3rd error for demonstration
         if self.error_count > 0 and self.error_count % 3 == 0:
             logger.critical(
                 f"ALERT_ERROR_SPIKE: Detected high failure rate! "

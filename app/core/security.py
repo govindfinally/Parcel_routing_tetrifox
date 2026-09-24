@@ -5,43 +5,40 @@ from fastapi.security import APIKeyHeader
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 from app.core.settings import settings
+from app.core.logging import setup_logger
 
+logger = setup_logger(__name__)
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
-
 _rate_limit_records = defaultdict(list)
-
 
 async def verify_api_key(api_key: str = Security(api_key_header)):
     if not api_key or api_key != settings.api_key:
+        logger.warning("Authentication failed: Invalid or missing API Key")
         raise HTTPException(status_code=401, detail="Invalid or missing API Key")
     return api_key
-
 
 async def check_rate_limit(request: Request):
     client_ip = request.client.host if request.client else "unknown"
     current_time = time.time()
     
     _rate_limit_records[client_ip] = [
-        timestamp for timestamp in _rate_limit_records[client_ip]
-        if current_time - timestamp < settings.rate_limit_window_seconds
+        t for t in _rate_limit_records[client_ip]
+        if current_time - t < settings.rate_limit_window_seconds
     ]
     
     if len(_rate_limit_records[client_ip]) >= settings.rate_limit_requests:
+        logger.warning(f"Rate limit exceeded for IP: {client_ip}")
         raise HTTPException(status_code=429, detail="Too Many Requests")
         
     _rate_limit_records[client_ip].append(current_time)
-
 
 class PayloadSizeLimitMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         content_length = request.headers.get('content-length')
         if content_length and int(content_length) > settings.max_payload_size_bytes:
-            return JSONResponse(
-                status_code=413, 
-                content={"detail": "Payload Too Large"}
-            )
+            logger.warning(f"Payload size exceeded: {content_length} bytes")
+            return JSONResponse(status_code=413, content={"detail": "Payload Too Large"})
         return await call_next(request)
-
 
 class SecurityHeadersMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
