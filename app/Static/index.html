@@ -17,11 +17,16 @@
             
             <div class="p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
                 
-                <!-- Left Column: Input Form (Takes up 5 columns on large screens) -->
+                <!-- Left Column: Input Forms (Takes up 5 columns on large screens) -->
                 <div class="lg:col-span-5">
-                    <h3 class="text-xl font-bold mb-5 text-gray-900 border-b pb-3">New Parcel</h3>
+                    <!-- Tab Navigation -->
+                    <div class="mb-4 flex space-x-2 border-b border-gray-200">
+                        <button id="tabSingle" class="py-2 px-4 font-bold text-indigo-600 border-b-2 border-indigo-600">Single Parcel</button>
+                        <button id="tabBatch" class="py-2 px-4 font-semibold text-gray-500 hover:text-gray-700 transition-colors">Batch Upload (JSON)</button>
+                    </div>
                     
-                    <form id="routingForm" class="space-y-5">
+                    <!-- Single Parcel Form -->
+                    <form id="routingForm" class="space-y-5 block">
                         <!-- Security -->
                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
                             <label class="block text-sm font-semibold text-gray-700 mb-1">Authorization</label>
@@ -64,6 +69,33 @@
                             </button>
                         </div>
                     </form>
+
+                    <!-- Batch Upload Form (Hidden by default) -->
+                    <div id="batchForm" class="space-y-5 hidden">
+                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Authorization</label>
+                            <input type="password" id="batchApiKey" value="default-dev-secret-key" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-lg border-2 border-dashed border-gray-300 text-center hover:border-indigo-500 transition-colors">
+                            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                            </svg>
+                            <div class="mt-4 flex text-sm text-gray-600 justify-center">
+                                <label for="fileUpload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                    <span>Upload a JSON file</span>
+                                    <input id="fileUpload" name="fileUpload" type="file" accept=".json" class="sr-only">
+                                </label>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Format: [{"weight": 5, "value": 100, "country": "US"}, ...]</p>
+                        </div>
+                        
+                        <div id="fileStatus" class="text-sm font-medium text-center text-gray-700"></div>
+                        
+                        <button id="processBatchBtn" disabled class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-gray-400 cursor-not-allowed transition-all">
+                            Process Batch
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Right Column: Results Dashboard (Takes up 7 columns on large screens) -->
@@ -89,7 +121,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                             </svg>
                         </div>
-                        <p class="text-gray-500 font-medium">Submit a parcel to see routing decision.</p>
+                        <p class="text-gray-500 font-medium">Submit a parcel or batch to see routing decisions.</p>
                     </div>
                     
                     <!-- Raw JSON Toggle (Optional for debugging) -->
@@ -105,6 +137,27 @@
     </div>
 
     <script>
+        // Tab Switching Logic
+        const tabSingle = document.getElementById('tabSingle');
+        const tabBatch = document.getElementById('tabBatch');
+        const formSingle = document.getElementById('routingForm');
+        const formBatch = document.getElementById('batchForm');
+
+        tabSingle.addEventListener('click', () => {
+            tabSingle.className = "py-2 px-4 font-bold text-indigo-600 border-b-2 border-indigo-600";
+            tabBatch.className = "py-2 px-4 font-semibold text-gray-500 hover:text-gray-700 transition-colors";
+            formSingle.classList.remove('hidden');
+            formBatch.classList.add('hidden');
+        });
+
+        tabBatch.addEventListener('click', () => {
+            tabBatch.className = "py-2 px-4 font-bold text-indigo-600 border-b-2 border-indigo-600";
+            tabSingle.className = "py-2 px-4 font-semibold text-gray-500 hover:text-gray-700 transition-colors";
+            formBatch.classList.remove('hidden');
+            formSingle.classList.add('hidden');
+        });
+
+        // UI Elements
         const form = document.getElementById('routingForm');
         const crashBtn = document.getElementById('forceCrashBtn');
         const cleanOutput = document.getElementById('cleanOutput');
@@ -112,7 +165,37 @@
         const loading = document.getElementById('loading');
         const reqIdDisplay = document.getElementById('reqIdDisplay');
 
-        // Function to build the beautiful result card
+        // Batch Elements
+        const fileUpload = document.getElementById('fileUpload');
+        const fileStatus = document.getElementById('fileStatus');
+        const processBatchBtn = document.getElementById('processBatchBtn');
+        let batchPayload = null;
+
+        // File Selection Logic
+        fileUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    batchPayload = JSON.parse(e.target.result);
+                    if (!Array.isArray(batchPayload)) throw new Error("JSON must be an array");
+                    
+                    fileStatus.innerHTML = `<span class="text-green-600">✓ Ready to process ${batchPayload.length} parcels</span>`;
+                    processBatchBtn.disabled = false;
+                    processBatchBtn.className = "w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all shadow-md";
+                } catch (err) {
+                    fileStatus.innerHTML = `<span class="text-red-600">✗ Invalid JSON format</span>`;
+                    batchPayload = null;
+                    processBatchBtn.disabled = true;
+                    processBatchBtn.className = "w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-gray-400 cursor-not-allowed transition-all";
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        // UI Renderers
         function renderSuccessCard(data) {
             return `
                 <div class="w-full text-left space-y-6 animate-fade-in-up">
@@ -165,7 +248,8 @@
             `;
         }
 
-        async function sendRequest(url, payload = null) {
+        // Core Request Logic
+        async function sendRequest(url, payload = null, isBatch = false) {
             cleanOutput.innerHTML = '';
             rawOutput.textContent = '';
             reqIdDisplay.textContent = 'Processing...';
@@ -173,7 +257,7 @@
             cleanOutput.classList.add('hidden');
             loading.classList.remove('hidden');
             
-            const apiKey = document.getElementById('apiKey').value;
+            const apiKey = isBatch ? document.getElementById('batchApiKey').value : document.getElementById('apiKey').value;
             const options = {
                 method: 'POST',
                 headers: {
@@ -190,13 +274,42 @@
                 
                 const data = await response.json();
                 
-                // Set Raw JSON for developers
                 rawOutput.textContent = JSON.stringify(data, null, 2);
                 rawOutput.className = response.ok ? "text-green-400 text-xs font-mono" : "text-red-400 text-xs font-mono";
                 
-                // Render beautiful UI for users
                 if (response.ok) {
-                    cleanOutput.innerHTML = renderSuccessCard(data);
+                    if (isBatch) {
+                        let batchHtml = `<div class="w-full text-left space-y-4 animate-fade-in-up">
+                            <h4 class="font-bold text-gray-700 border-b pb-2">Batch Results (${data.processed_count} Processed, ${data.failed_count} Failed)</h4>
+                            <div class="max-h-[400px] overflow-y-auto space-y-3 pr-2">`;
+                        
+                        data.results.forEach(res => {
+                            batchHtml += `
+                                <div class="bg-white p-3 rounded-lg border border-l-4 border-l-green-500 shadow-sm flex justify-between items-center">
+                                    <div>
+                                        <div class="text-xs text-gray-500">ID: ${res.parcel_id}</div>
+                                        <div class="font-bold text-indigo-700">${res.department}</div>
+                                    </div>
+                                    <div class="text-right text-xs">
+                                        <div>${res.weight_kg}kg | €${res.value_eur}</div>
+                                        <div class="text-green-600 font-medium">${res.status}</div>
+                                    </div>
+                                </div>`;
+                        });
+
+                        data.errors.forEach(err => {
+                            batchHtml += `
+                                <div class="bg-white p-3 rounded-lg border border-l-4 border-l-red-500 shadow-sm">
+                                    <div class="text-xs text-red-500 font-bold">Failed at Row ${err.index + 1}</div>
+                                    <div class="text-xs text-gray-700 mt-1">${JSON.stringify(err.error)}</div>
+                                </div>`;
+                        });
+                        
+                        batchHtml += `</div></div>`;
+                        cleanOutput.innerHTML = batchHtml;
+                    } else {
+                        cleanOutput.innerHTML = renderSuccessCard(data);
+                    }
                 } else {
                     let errorMsg = data.detail;
                     if (typeof errorMsg === 'object') errorMsg = JSON.stringify(errorMsg);
@@ -212,6 +325,7 @@
             }
         }
 
+        // Event Listeners
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const payload = {
@@ -219,11 +333,15 @@
                 value: parseFloat(document.getElementById('value').value),
                 country: document.getElementById('country').value
             };
-            sendRequest('/api/v1/route', payload);
+            sendRequest('/api/v1/route', payload, false);
+        });
+
+        processBatchBtn.addEventListener('click', () => {
+            if (batchPayload) sendRequest('/api/v1/route/batch', batchPayload, true);
         });
 
         crashBtn.addEventListener('click', () => {
-            sendRequest('/api/v1/force-error');
+            sendRequest('/api/v1/force-error', null, false);
         });
     </script>
     <style>
@@ -232,6 +350,22 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in-up { animation: fadeInUp 0.4s ease-out forwards; }
+        
+        /* Custom scrollbar for batch results */
+        .overflow-y-auto::-webkit-scrollbar {
+            width: 6px;
+        }
+        .overflow-y-auto::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 4px;
+        }
+        .overflow-y-auto::-webkit-scrollbar-thumb {
+            background: #c7c7cc; 
+            border-radius: 4px;
+        }
+        .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+            background: #a1a1aa; 
+        }
     </style>
 </body>
 </html>
