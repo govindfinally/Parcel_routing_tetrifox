@@ -1,168 +1,69 @@
-# 🧩 Technical Assessment: Parcel Routing System
+```markdown
+# Secure Parcel Routing Engine 📦
 
-## Overview
+A production-grade, rule-based logistics routing engine built with **FastAPI**, **Pydantic V2**, and **Tailwind CSS**. This system ingests parcel data, sanitizes it, evaluates it against a configurable YAML ruleset, and deterministically routes the package to the correct department.
 
-You are a developer at a parcel delivery company responsible for modernizing an internal parcel routing system.
+## 🚀 Features & Architecture
 
-The system processes parcels and routes them to different departments based on business rules.
+This project was built with a strict focus on **Security**, **Observability**, and **Maintainability**.
 
-The company expects the system to:
+### 1. Core Engine (`app/routing/`)
+- **Dynamic Rules Loading:** Routing logic is decoupled from code. Rules are defined in `config/rules.yaml` and loaded into memory on server startup.
+- **Strict Validation:** Uses Pydantic V2 to enforce schema constraints (e.g., preventing negative weights or unsupported country codes).
+- **Safe Evaluation:** Uses sandboxed Python `eval()` with restricted globals to process mathematical and logical routing conditions dynamically.
 
-- Be adaptable to business changes
-- Be reliable when failures occur
-- Be safe to evolve
-- Provide sufficient visibility when something goes wrong
-- Demonstrate thoughtful engineering beyond basic coding
+### 2. Security First (`app/core/security.py`)
+- **API Key Authentication:** All endpoints are protected via an `X-API-Key` header.
+- **Rate Limiting:** IP-based tracking to prevent DDoS attacks or abuse.
+- **Payload Sanitization:** Custom parsing logic intercepts raw JSON to strip null bytes, prevent deeply nested structures (Billion Laughs attack), and neutralize basic XSS vectors before Pydantic ever sees the data.
+- **Middleware Protections:** Strict payload size limits and OWASP-recommended security headers.
 
-You are encouraged to use AI tools during development. However, you must demonstrate ownership of the design and clearly explain your reasoning.
+### 3. Production Observability (`app/core/logging.py` & `errors.py`)
+- **Structured JSON Logging:** All logs are output in JSON format, ready for ingestion by tools like Datadog, ELK, or CloudWatch.
+- **PII Masking:** Email addresses and card numbers are automatically redacted using regex at the logging layer.
+- **Request Tracing:** A unique `X-Request-ID` is generated for every call, injected into the logging context, and returned to the client.
+- **Safe Exception Handling:** A global error handler catches unhandled exceptions, logs the full stack trace internally, but returns a sterile HTTP 500 response to the client to prevent information leakage.
 
----
+### 4. Interactive Dashboard (`app/static/index.html`)
+- A clean, responsive UI built with Tailwind CSS served directly via FastAPI.
+- Allows real-time testing of the routing rules and visualizes system crashes securely.
 
-## 📦 Core Requirements
+## 🛠️ Tech Stack
+- **Backend:** Python 3.11, FastAPI, Uvicorn, Pydantic V2
+- **Testing:** Pytest, AnyIO
+- **Frontend:** HTML5, JavaScript, Tailwind CSS (via CDN)
+- **CI/CD:** GitHub Actions
 
-### 1. Parcel Routing
+## 🚦 Getting Started
 
-Each parcel contains:
+### Installation
+```bash
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+source venv/bin/activate
 
-- Weight (kg)
-- Value (€)
-- Destination country
-- Optional additional attributes
+pip install -r requirements.txt
 
-#### Default Routing Rules
+```
 
-- Up to 1 kg → **Mail Department**
-- Up to 10 kg → **Regular Department**
-- Over 10 kg → **Heavy Department**
-- Parcels with value greater than €1,000 require **Insurance approval** before routing
+### Running the Server
 
-#### Expectations
+```bash
+uvicorn app.main:app --reload
 
-- Implement routing logic.
-- Make business rules adaptable to change.
-- Design the system so that future departments or routing conditions can be added without major refactoring.
-- Consider how rule changes could impact system correctness and safety.
+```
 
-> You are not given strict instructions on how to handle configuration safety — your design should account for business risks.
+Navigate to `http://127.0.0.1:8000` to access the Dashboard.
 
----
+### Running Tests
 
-### 2. User Interface
+```bash
+pytest
 
-Provide a simple interface that allows:
+```
 
-- Entering parcel data
-- Uploading batch data (JSON or XML — your choice, justify it)
-- Viewing routing outcomes clearly
+```
 
-The interface should:
-
-- Be usable by non-technical operators
-- Communicate decisions clearly
-- Handle large input files gracefully
-- Be responsive (if web-based)
-
-Focus on clarity and usability over visual complexity.
-
----
-
-### 3. Quality Assurance
-
-- Include automated tests for routing logic.
-- Demonstrate how your tests protect against regressions.
-- Show how you would introduce a new rule safely.
-- Include a small example of feature development from branch to merge.
-
-Also describe how you validate correctness beyond automated tests.
-
----
-
-### 4. Monitoring & Reliability
-
-Design the system so that if something goes wrong, the team is notified and there is enough information available to investigate, resolve the issue, and detect unusual patterns in parcel routing.
-
----
-
-### 5. Security
-
-This application will be deployed facing the public internet. Implement appropriate measures to safeguard it.
-
-Consider how you would protect the system against common threats.
-
-#### Requirements
-
-- Implement security measures in your application.
-- Be prepared to explain:
-  - What additional measures you would implement to secure the system.
-  - Why those measures are important.
-
----
-
-### 6. Debugging
-
-You will be provided with a buggy routing function during the interview.
-
-Be prepared to:
-
-- Identify the issue quickly
-- Explain how you reasoned about it
-- Fix it cleanly
-- Prevent similar issues in the future
-
----
-
-### 7. AI Usage
-
-You are expected to use AI tools for at least two parts of this assignment.
-
-You must:
-
-- Show the prompts you used
-- Explain what you modified and why
-- Demonstrate that you understand the generated code
-- Reflect on limitations of AI in this context
-
----
-
-## 📂 Deliverables
-
-- Production-ready application
-- You can choose any programming language
-- Tests
-- Configuration system (if used)
-- README including:
-  - Architecture decisions
-  - Trade-offs
-  - AI usage documentation
-  - How to extend the system with new routing rules
-- Short presentation (10–15 minutes)
-
----
-
-## 🎤 Interview Expectations
-
-During the interview, you should be able to:
-
-- Demo your system end-to-end
-- Modify or extend routing logic live
-- Explain design trade-offs
-- Explain how your system adapts to business change
-- Discuss how failures would be handled
-- Walk through your AI-assisted development process
-
----
-
-## 🧠 What We Are Evaluating
-
-- Engineering judgment
-- Adaptability
-- System thinking
-- Code quality
-- UX awareness
-- Testing discipline
-- Ability to reason about failure
-- Responsible use of AI tools
-
----
-
-This assessment is intentionally open-ended. There is no single correct implementation.
+```

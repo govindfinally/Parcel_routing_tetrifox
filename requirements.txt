@@ -1,0 +1,10 @@
+
+fastapi 
+uvicorn 
+pydantic 
+pyyaml 
+pytest
+httpx 
+slowapi 
+python-multipart
+pydantic_settings
