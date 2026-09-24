@@ -1,7 +1,15 @@
-```markdown
 # Secure Parcel Routing Engine 📦
 
 A production-grade, rule-based logistics routing engine built with **FastAPI**, **Pydantic V2**, and **Tailwind CSS**. This system ingests parcel data, sanitizes it, evaluates it against a configurable YAML ruleset, and deterministically routes the package to the correct department.
+
+---
+
+## 🖥️ System Interface
+
+![Dashboard Screenshot](image_59f51a.png)
+*The interactive operator dashboard supporting both single-parcel evaluation and JSON batch uploads with partial-failure handling.*
+
+---
 
 ## 🚀 Features & Architecture
 
@@ -11,6 +19,7 @@ This project was built with a strict focus on **Security**, **Observability**, a
 - **Dynamic Rules Loading:** Routing logic is decoupled from code. Rules are defined in `config/rules.yaml` and loaded into memory on server startup.
 - **Strict Validation:** Uses Pydantic V2 to enforce schema constraints (e.g., preventing negative weights or unsupported country codes).
 - **Safe Evaluation:** Uses sandboxed Python `eval()` with restricted globals to process mathematical and logical routing conditions dynamically.
+- **Batch Processing:** Dedicated endpoint for bulk JSON ingestion, designed to process valid parcels even if adjacent array items contain bad data.
 
 ### 2. Security First (`app/core/security.py`)
 - **API Key Authentication:** All endpoints are protected via an `X-API-Key` header.
@@ -28,11 +37,25 @@ This project was built with a strict focus on **Security**, **Observability**, a
 - A clean, responsive UI built with Tailwind CSS served directly via FastAPI.
 - Allows real-time testing of the routing rules and visualizes system crashes securely.
 
+---
+
+## ⚖️ Architectural Trade-offs
+
+To balance security, maintainability, and delivery speed, several conscious trade-offs were made during development:
+
+1. **`eval()` vs. Custom Parser:** We used Python's `eval()` for rule execution. *Trade-off:* While `eval()` introduces theoretical security risks, we mitigated this by stripping the `__builtins__` context and running a strict AST (Abstract Syntax Tree) validation pass at startup. This provided maximum flexibility for business operators to write logic without the engineering overhead of building a custom grammar parser.
+2. **JSON vs. XML for Batch Uploads:** We chose JSON over XML for the batch endpoint. *Trade-off:* While some legacy logistics systems rely on XML, JSON integrates natively with FastAPI/Pydantic, has a smaller payload size, and completely eliminates the risk of XXE (XML External Entity) injection attacks.
+3. **In-Memory Rules vs. Database:** Rules are loaded into memory from a YAML file at startup. *Trade-off:* This means the server must be restarted (or a webhook triggered) to apply new rules. However, it guarantees zero database latency during the critical path of parcel evaluation.
+
+---
+
 ## 🛠️ Tech Stack
 - **Backend:** Python 3.11, FastAPI, Uvicorn, Pydantic V2
 - **Testing:** Pytest, AnyIO
 - **Frontend:** HTML5, JavaScript, Tailwind CSS (via CDN)
 - **CI/CD:** GitHub Actions
+
+---
 
 ## 🚦 Getting Started
 
@@ -45,25 +68,3 @@ venv\Scripts\activate
 source venv/bin/activate
 
 pip install -r requirements.txt
-
-```
-
-### Running the Server
-
-```bash
-uvicorn app.main:app --reload
-
-```
-
-Navigate to `http://127.0.0.1:8000` to access the Dashboard.
-
-### Running Tests
-
-```bash
-pytest
-
-```
-
-```
-
-```
