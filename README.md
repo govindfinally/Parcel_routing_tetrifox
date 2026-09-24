@@ -1,4 +1,5 @@
 # Secure Parcel Routing Engine 📦
+<img width="1910" height="1037" alt="image" src="https://github.com/user-attachments/assets/52059a50-a61a-4180-8b4b-a0689770fe28" />
 
 A production-grade, rule-based logistics routing engine built with **FastAPI**, **Pydantic V2**, and **Tailwind CSS**. This system ingests parcel data, sanitizes it, evaluates it against a configurable YAML ruleset, and deterministically routes the package to the correct department.
 
@@ -68,3 +69,4 @@ venv\Scripts\activate
 source venv/bin/activate
 
 pip install -r requirements.txt
+
