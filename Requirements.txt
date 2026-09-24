@@ -7,3 +7,4 @@ pytest
 httpx 
 slowapi 
 python-multipart
+pydantic_settings
