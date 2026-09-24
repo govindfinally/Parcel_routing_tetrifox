@@ -1,7 +1,9 @@
 import uuid
+import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, status, Request
-from fastapi.responses import FileResponse # Add this import
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.core.security import SecurityHeadersMiddleware, PayloadSizeLimitMiddleware
 from app.api.routes import router as api_router
@@ -15,7 +17,7 @@ logger = setup_logger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     try:
-        RulesConfig.load("config/rules.yaml")
+        RulesConfig.load("config/rules.yaml") # Ensure this method name matches your RulesConfig class!
         logger.info("Application startup complete.")
     except Exception as e:
         logger.error(f"Failed to load rules on startup: {e}")
@@ -24,7 +26,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Secure Parcel Routing Engine", lifespan=lifespan)
 
-app.add_exception_handler(Exception, global_exception_handler)
+#app.add_exception_handler(Exception, global_exception_handler)
 
 @app.middleware("http")
 async def request_id_middleware(request: Request, call_next):
@@ -38,12 +40,23 @@ async def request_id_middleware(request: Request, call_next):
 
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(PayloadSizeLimitMiddleware)
-app.include_router(api_router)
+
+# Mount the static directory
+os.makedirs("app/static", exist_ok=True)
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+app.include_router(api_router, prefix="/api/v1") # Added prefix so API calls don't conflict with root
 
 # --- ADD THIS ROUTE FOR THE UI ---
 @app.get("/", include_in_schema=False)
 async def serve_ui():
-    return FileResponse("app/static/index.html")
+    html_path = os.path.join(os.getcwd(), "app", "static", "index.html")
+    if os.path.exists(html_path):
+        return FileResponse(html_path)
+    return JSONResponse(
+        status_code=404, 
+        content={"detail": "Dashboard UI not found. Ensure app/static/index.html exists."}
+    )
 
 @app.get("/health", status_code=status.HTTP_200_OK)
 async def health_check():
