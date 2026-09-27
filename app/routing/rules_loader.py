@@ -11,6 +11,7 @@ class RoutingRule(BaseModel):
     priority: int
     condition: str
     department: str
+    
 
 class RuleLoaderError(Exception):
     pass

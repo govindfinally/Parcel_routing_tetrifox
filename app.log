@@ -1,0 +1,582 @@
+{"timestamp": "2026-09-26T12:13:23.783136Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-26T12:13:24.706519Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-26T12:13:24.706519Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-26T12:13:24.706519Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-26T12:13:30.748650Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-26T12:13:39.827407Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-26T12:13:39.827407Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-26T12:13:39.827407Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-26T12:18:22.248811Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-26T12:18:23.192444Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-26T12:18:23.192444Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-26T12:18:23.192444Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T07:32:13.249957Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T07:32:13.249957Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T07:32:13.249957Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T07:33:44.064131Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 3 rules."}
+{"timestamp": "2026-09-27T07:33:44.064131Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 3 rules into memory."}
+{"timestamp": "2026-09-27T07:33:44.069763Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "system", "message": "Rule evaluation skipped for 'High Value Insurance': name 'department' is not defined"}
+{"timestamp": "2026-09-27T07:33:44.069763Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "system", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T07:33:44.069763Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "system", "message": "Rule evaluation skipped for 'Liquid Handling': name 'is_liquid' is not defined"}
+{"timestamp": "2026-09-27T07:33:44.086257Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 3 rules."}
+{"timestamp": "2026-09-27T07:33:44.086257Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 3 rules into memory."}
+{"timestamp": "2026-09-27T07:33:44.086257Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "system", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T07:33:44.086257Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "system", "message": "Rule evaluation skipped for 'Liquid Handling': name 'is_liquid' is not defined"}
+{"timestamp": "2026-09-27T07:33:44.086257Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 3 rules."}
+{"timestamp": "2026-09-27T07:33:44.086257Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 3 rules into memory."}
+{"timestamp": "2026-09-27T07:33:44.086257Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "system", "message": "Rule evaluation skipped for 'Liquid Handling': name 'is_liquid' is not defined"}
+{"timestamp": "2026-09-27T07:33:44.096686Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-3693a4db] matched NO rules. Routed to Manual Review (Fallback)"}
+{"timestamp": "2026-09-27T07:33:44.101346Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 3 rules."}
+{"timestamp": "2026-09-27T07:33:44.101346Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 3 rules into memory."}
+{"timestamp": "2026-09-27T07:33:44.101346Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "system", "message": "Rule evaluation skipped for 'Liquid Handling': name 'department' is not defined"}
+{"timestamp": "2026-09-27T07:33:44.112614Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 3 rules."}
+{"timestamp": "2026-09-27T07:33:44.112614Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 3 rules into memory."}
+{"timestamp": "2026-09-27T07:33:44.112614Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "system", "message": "Rule evaluation skipped for 'Liquid Handling': name 'is_liquid' is not defined"}
+{"timestamp": "2026-09-27T07:33:44.112614Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-27d46c1d] matched NO rules. Routed to Manual Review (Fallback)"}
+{"timestamp": "2026-09-27T07:33:53.398843Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 1 rules."}
+{"timestamp": "2026-09-27T07:33:53.405499Z", "level": "ERROR", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Rules file not found at non_existent_fake_file.yaml"}
+{"timestamp": "2026-09-27T07:34:38.718338Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "317de6a2-2a6a-4e2a-aef6-c626cd3d6276", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T07:34:38.718338Z", "level": "INFO", "logger": "app.api.routes", "request_id": "317de6a2-2a6a-4e2a-aef6-c626cd3d6276", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T08:55:39.496605Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T08:55:40.550994Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T08:55:40.550994Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T08:55:40.550994Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T08:55:46.035536Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T08:55:46.959190Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T08:55:46.959190Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T08:55:46.959190Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T08:55:47.421087Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T08:55:48.345219Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T08:55:48.345219Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T08:55:48.345219Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T08:55:50.867202Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T08:55:51.729834Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T08:55:51.729834Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T08:55:51.729834Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T09:28:42.817030Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T09:28:43.820329Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T09:28:43.820329Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T09:28:43.821681Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T09:28:47.944946Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T09:29:07.981484Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T09:29:07.982512Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T09:29:07.982512Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T09:32:56.773769Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T09:32:57.648871Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T09:32:57.648871Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T09:32:57.648871Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T09:50:05.107207Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T09:50:05.979284Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T09:50:05.986071Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T09:50:05.986071Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T09:50:21.839219Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T09:50:27.811302Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T09:50:27.811302Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T09:50:27.811302Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T09:50:30.290496Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T09:50:31.288341Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T09:50:31.288341Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T09:50:31.288341Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T09:50:32.354253Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T09:50:33.283863Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T09:50:33.283863Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T09:50:33.283863Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T09:50:39.599432Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T10:16:13.924813Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T10:16:13.924813Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T10:16:13.924813Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T10:16:23.660117Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T10:16:24.641584Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T10:16:24.641584Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T10:16:24.643947Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T10:17:09.799944Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T10:17:10.740331Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T10:17:10.740331Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T10:17:10.740331Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:47:14.688367Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:47:15.601332Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:47:15.601332Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:47:15.601332Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:47:20.488832Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:47:21.439673Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:47:21.439673Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:47:21.439673Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:47:27.064691Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:47:27.960538Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:47:27.960538Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:47:27.960538Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:47:35.880202Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:47:36.765761Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:47:36.765761Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:47:36.765761Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:48:45.911327Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:48:47.025110Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:48:47.025110Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:48:47.025110Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:48:47.378833Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:48:48.386460Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:48:48.386460Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:48:48.386984Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:48:50.132264Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:48:50.958735Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:48:50.958735Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:48:50.964261Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:48:52.791772Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:48:53.730468Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:48:53.730468Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:48:53.736094Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:48:54.923937Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:48:55.796623Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:48:55.796623Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:48:55.796623Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:48:59.211911Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:49:00.201211Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:49:00.201211Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:49:00.201211Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:49:00.648014Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:49:01.664431Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:49:01.664431Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:49:01.664431Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:49:02.730954Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:49:03.708222Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:49:03.708783Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:49:03.708783Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:49:06.284551Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:49:07.211336Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:49:07.211336Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:49:07.211336Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:49:08.299303Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:49:09.277824Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:49:09.278856Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:49:09.278856Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:49:10.353213Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:49:11.309104Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:49:11.309104Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:49:11.309104Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:49:12.483209Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:49:13.366650Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:49:13.366650Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:49:13.366650Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:50:26.402408Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:50:27.206107Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:50:27.206107Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:50:27.206107Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:50:30.755352Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:50:31.640336Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:50:31.640336Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:50:31.640336Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:51:05.638947Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:51:06.559404Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:51:06.559404Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:51:06.559404Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:51:39.961751Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:51:40.845192Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:51:40.845192Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:51:40.845192Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:52:29.880810Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:52:30.857682Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:52:30.857682Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:52:30.858204Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:52:32.700986Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:52:36.650281Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:52:36.650281Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:52:36.650281Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:52:38.501543Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:52:39.398375Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:52:39.398375Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:52:39.398375Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:52:40.480611Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:52:41.341670Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:52:41.341670Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:52:41.341670Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:52:43.189593Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:52:44.117679Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:52:44.121028Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:52:44.121028Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:52:45.949687Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:52:46.849807Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:52:46.849807Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:52:46.849807Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:52:59.576035Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:53:38.369093Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:53:38.369093Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:53:38.369093Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:53:53.174441Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:53:54.155116Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:53:54.155116Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:53:54.155116Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:53:57.715053Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:53:58.644909Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:53:58.645426Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:53:58.645426Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:54:02.694422Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:54:06.302535Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:54:06.302535Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:54:06.304544Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:54:06.763927Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:54:07.680278Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:54:07.680278Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:54:07.682265Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:54:08.136658Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:54:09.022974Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:54:09.022974Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:54:09.027816Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:55:20.841195Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:55:21.744388Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:55:21.744388Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:55:21.744388Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:56:01.920499Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:56:20.143122Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:56:20.143122Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:56:20.143122Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:56:34.402533Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:56:35.523666Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:56:35.523666Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:56:35.523666Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:56:37.336700Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:56:38.278307Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:56:38.278307Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:56:38.278307Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:56:39.466092Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:56:40.433236Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:56:40.433236Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:56:40.433236Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:56:43.788838Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:56:44.655323Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:56:44.655323Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:56:44.655323Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:59:47.289782Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:59:48.208010Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:59:48.208010Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:59:48.208010Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T11:59:52.291299Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T11:59:54.331349Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T11:59:54.331349Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T11:59:54.331349Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:04:20.186039Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:04:21.137584Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:04:21.137584Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:04:21.137584Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:04:21.488714Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:04:22.447404Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:04:22.447928Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:04:22.447928Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:04:24.291841Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:04:25.249037Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:04:25.249037Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:04:25.249037Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:04:26.352726Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:04:27.225838Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:04:27.225838Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:04:27.225838Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:06:27.148406Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:06:28.138946Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:06:28.139463Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:06:28.139463Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:06:32.245501Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:06:33.296686Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:06:33.296686Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:06:33.296686Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:06:36.523049Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:06:37.429143Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:06:37.429143Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:06:37.429143Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:06:48.043662Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:06:51.027987Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:06:51.027987Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:06:51.027987Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:06:52.106704Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:06:52.977042Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:06:52.977042Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:06:52.977042Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:07.948549Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:08.889287Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:08.889833Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:08.890355Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:15.315722Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:16.381927Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:16.381927Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:16.381927Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:17.494669Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:18.470618Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:18.470618Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:18.470618Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:20.321287Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:21.279010Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:21.279010Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:21.282144Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:36.597970Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:37.545766Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:37.549361Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:37.549361Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:38.010826Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:39.064459Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:39.064459Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:39.064459Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:40.901114Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:41.785722Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:41.785722Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:41.785722Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:45.798974Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:46.771423Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:46.771423Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:46.771423Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:48.688112Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:49.646429Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:49.646429Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:49.646429Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:07:50.098083Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T12:07:51.035342Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T12:07:51.035342Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T12:07:51.035342Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T12:12:48.361311Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "c70cbafe-6676-4c65-bc16-a0240fbe15c6", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T12:12:48.361311Z", "level": "INFO", "logger": "app.api.routes", "request_id": "c70cbafe-6676-4c65-bc16-a0240fbe15c6", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T12:14:15.381999Z", "level": "WARNING", "logger": "app.core.security", "request_id": "e8a6efd6-11b4-48f2-9ac9-4c34ac9eb706", "message": "Authentication failed: Invalid or missing API Key"}
+{"timestamp": "2026-09-27T12:16:02.872708Z", "level": "WARNING", "logger": "app.core.security", "request_id": "c67b0f12-52f1-4942-b866-ca9fdb4c54e5", "message": "Authentication failed: Invalid or missing API Key"}
+{"timestamp": "2026-09-27T12:16:46.171866Z", "level": "ERROR", "logger": "app.api.routes", "request_id": "219c8dc6-b6e3-4421-b025-8a007e09a93e", "message": "Failed to reload rules in rules_config: Duplicate priority: 1"}
+{"timestamp": "2026-09-27T12:53:46.657710Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "be682cff-1060-408d-aa64-6517470f69a2", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T12:53:46.658840Z", "level": "INFO", "logger": "app.api.routes", "request_id": "be682cff-1060-408d-aa64-6517470f69a2", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T12:53:51.635970Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "86f19c76-7521-4357-98c8-0a505a22d099", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T12:53:51.635970Z", "level": "INFO", "logger": "app.api.routes", "request_id": "86f19c76-7521-4357-98c8-0a505a22d099", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T12:57:32.028674Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "72935246-1095-4297-a09c-d48f2d0d8ea0", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T12:57:32.030184Z", "level": "INFO", "logger": "app.api.routes", "request_id": "72935246-1095-4297-a09c-d48f2d0d8ea0", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T12:57:37.700034Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "887860f0-32bb-4061-bc47-a336c9a4a74a", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T12:57:37.700034Z", "level": "INFO", "logger": "app.api.routes", "request_id": "887860f0-32bb-4061-bc47-a336c9a4a74a", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T12:57:38.961171Z", "level": "ERROR", "logger": "app.api.routes", "request_id": "ebf6ae90-238e-443f-8578-e833ff7dacc3", "message": "Simulating system crash!"}
+{"timestamp": "2026-09-27T12:57:44.639350Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "63b278c3-a977-46d0-8e50-61999ed1f6ad", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T12:57:44.639350Z", "level": "INFO", "logger": "app.api.routes", "request_id": "63b278c3-a977-46d0-8e50-61999ed1f6ad", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T12:57:50.732099Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "13f7ca12-9294-49f8-85ff-23ebd35e557f", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T12:57:50.732099Z", "level": "INFO", "logger": "app.api.routes", "request_id": "13f7ca12-9294-49f8-85ff-23ebd35e557f", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T13:25:43.344036Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "65aa4678-8031-4848-bd66-bd2ded17c8fb", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T13:25:43.345037Z", "level": "INFO", "logger": "app.api.routes", "request_id": "65aa4678-8031-4848-bd66-bd2ded17c8fb", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T13:37:05.876703Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "1a602943-80bf-45f9-a27b-504f9895d24f", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T13:37:05.876703Z", "level": "INFO", "logger": "app.api.routes", "request_id": "1a602943-80bf-45f9-a27b-504f9895d24f", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T13:37:07.898129Z", "level": "ERROR", "logger": "app.api.routes", "request_id": "969773c7-d9d0-4130-b6f6-015169d12fca", "message": "Failed to reload rules in rules_config: Duplicate priority: 1"}
+{"timestamp": "2026-09-27T13:37:12.605663Z", "level": "ERROR", "logger": "app.api.routes", "request_id": "7c031f32-19d2-4447-911e-9ca8afd73cc6", "message": "Failed to reload rules in rules_config: Duplicate priority: 1"}
+{"timestamp": "2026-09-27T13:37:14.578437Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "ef105262-1a5d-4494-b515-fce3cf5257a8", "message": "Rule evaluation skipped for 'fragile item': name 'department' is not defined"}
+{"timestamp": "2026-09-27T13:37:14.578437Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "ef105262-1a5d-4494-b515-fce3cf5257a8", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T13:37:14.578437Z", "level": "INFO", "logger": "app.api.routes", "request_id": "ef105262-1a5d-4494-b515-fce3cf5257a8", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T13:37:20.850264Z", "level": "ERROR", "logger": "app.api.routes", "request_id": "64d007c4-6874-4184-88c8-f20c544bd3a0", "message": "Failed to reload rules in rules_config: Duplicate priority: 1"}
+{"timestamp": "2026-09-27T13:37:35.319740Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "d91a7563-6048-4ea7-b583-e3f6ab36e9ab", "message": "Rule evaluation skipped for 'fragile item': name 'department' is not defined"}
+{"timestamp": "2026-09-27T13:37:35.319740Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "d91a7563-6048-4ea7-b583-e3f6ab36e9ab", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T13:37:35.320548Z", "level": "INFO", "logger": "app.api.routes", "request_id": "d91a7563-6048-4ea7-b583-e3f6ab36e9ab", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T13:37:37.245419Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "e8ac100c-5245-46a4-9f18-0d9d352afe6d", "message": "Successfully validated and sorted 5 rules."}
+{"timestamp": "2026-09-27T13:37:37.245419Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "e8ac100c-5245-46a4-9f18-0d9d352afe6d", "message": "RulesConfig loaded 5 rules into memory."}
+{"timestamp": "2026-09-27T13:37:37.245419Z", "level": "INFO", "logger": "app.api.routes", "request_id": "e8ac100c-5245-46a4-9f18-0d9d352afe6d", "message": "Routing rules reloaded successfully in the rules_config."}
+{"timestamp": "2026-09-27T13:37:44.064538Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "c7631209-496b-4825-babd-ed9203eab855", "message": "Rule evaluation skipped for 'fragile item': name 'department' is not defined"}
+{"timestamp": "2026-09-27T13:37:44.065730Z", "level": "WARNING", "logger": "app.routing.engine", "request_id": "c7631209-496b-4825-babd-ed9203eab855", "message": "Rule evaluation skipped for 'Lightweight Mail': name 'department' is not defined"}
+{"timestamp": "2026-09-27T13:37:44.065730Z", "level": "INFO", "logger": "app.api.routes", "request_id": "c7631209-496b-4825-babd-ed9203eab855", "message": "Parcel routed successfully"}
+{"timestamp": "2026-09-27T18:07:44.562776Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:07:44.562776Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:07:44.562776Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:08:07.702639Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:08:08.587786Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:08:08.587786Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:08:08.587786Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:08:14.522495Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:08:15.453419Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:08:15.453419Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:08:15.453419Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:08:29.260039Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:08:30.174057Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:08:30.174057Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:08:30.174057Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:08:30.627753Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:08:33.291959Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:08:33.291959Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:08:33.291959Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:08:35.858161Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:08:59.752831Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:08:59.753835Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:08:59.753835Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:09:21.100080Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:09:21.888055Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:09:21.888055Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:09:21.888055Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:09:26.694062Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:09:33.719911Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:09:33.719911Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:09:33.719911Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:09:37.227988Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:09:38.101477Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:09:38.101477Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:09:38.103252Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:10:40.790018Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:10:41.770848Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:10:41.770848Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:10:41.770848Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:10:52.817297Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:10:55.511533Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:10:55.511533Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:10:55.511533Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:11:08.755567Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:11:09.736775Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:11:09.736775Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:11:09.736775Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:11:10.183350Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:11:11.131254Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:11:11.131254Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:11:11.131254Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:11:13.689301Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:11:15.781132Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:11:15.781132Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:11:15.781132Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:11:21.003901Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:11:33.150674Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:11:33.150674Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:11:33.150674Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:11:34.975537Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:11:35.899717Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:11:35.899717Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:11:35.900720Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:11:37.712291Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:11:38.683347Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:11:38.684348Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:11:38.684348Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:11:39.128137Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:11:40.015573Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:11:40.015573Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:11:40.015573Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:11:47.653570Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:11:55.733389Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:11:55.733389Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:11:55.733389Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:01.129846Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:02.160636Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:02.160636Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:02.160636Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:04.912343Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:08.304790Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:08.304790Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:08.304790Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:13.508855Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:14.391860Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:14.391860Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:14.391860Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:15.467171Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:16.365203Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:16.365203Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:16.365203Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:17.460768Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:23.551795Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:23.551795Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:23.551795Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:29.545015Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:30.441968Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:30.441968Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:30.441968Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:37.945936Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:38.879747Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:38.880750Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:38.880750Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:40.070777Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:52.575529Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:52.577406Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:52.577406Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:12:53.654374Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:12:58.341076Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:12:58.341076Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:12:58.341076Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:13:01.747411Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:13:02.584598Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:13:02.584598Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:13:02.584598Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:15:50.333548Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:15:51.261842Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:15:51.261842Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:15:51.261842Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:18:17.558335Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:18:18.451591Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:18:18.451591Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:18:18.451591Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:24:09.825496Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:24:10.805789Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:24:10.805789Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:24:10.805789Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:24:11.984684Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:24:12.866580Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:24:12.866580Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:24:12.866580Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:24:18.148055Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:24:19.083606Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:24:19.083606Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:24:19.083606Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete."}
+{"timestamp": "2026-09-27T18:24:27.319926Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:24:27.319926Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:24:27.325822Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-afcef41d] matched rule: 'High Value Insurance'"}
+{"timestamp": "2026-09-27T18:24:27.325822Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-afcef41d] matched rule: 'Lightweight Mail'"}
+{"timestamp": "2026-09-27T18:24:27.331402Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:24:27.331402Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:24:27.331402Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-ab1b4607] matched rule: 'Lightweight Mail'"}
+{"timestamp": "2026-09-27T18:24:27.346825Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:24:27.346825Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:24:27.359872Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:24:27.359872Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:24:27.359872Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-4d79352d] matched rule: 'Liquid Handling'"}
+{"timestamp": "2026-09-27T18:24:27.371577Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:24:27.371577Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:24:27.380019Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:24:27.380019Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:24:27.493247Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:24:27.493247Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:24:27.493247Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-21b15a11] matched rule: 'Tie Alpha'"}
+{"timestamp": "2026-09-27T18:24:27.493247Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-21b15a11] matched rule: 'Tie Beta'"}
+{"timestamp": "2026-09-27T18:26:27.288263Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:26:28.243861Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:26:28.243861Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:26:28.245396Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete. Rules loaded successfully."}
+{"timestamp": "2026-09-27T18:26:36.191985Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:36.191985Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:36.193015Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-c17a7031] matched rule: 'High Value Insurance'"}
+{"timestamp": "2026-09-27T18:26:36.194344Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-c17a7031] matched rule: 'Lightweight Mail'"}
+{"timestamp": "2026-09-27T18:26:36.212666Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:36.212666Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:36.214671Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-0a5f6e14] matched rule: 'Lightweight Mail'"}
+{"timestamp": "2026-09-27T18:26:36.222619Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:36.223626Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:36.232469Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:36.232469Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:36.234484Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-379ca2ac] matched rule: 'Liquid Handling'"}
+{"timestamp": "2026-09-27T18:26:36.242354Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:36.242354Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:36.245019Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:36.245019Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:36.360177Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:36.360177Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:36.362187Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-1d01a475] matched rule: 'Tie Alpha'"}
+{"timestamp": "2026-09-27T18:26:36.362187Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-1d01a475] matched rule: 'Tie Beta'"}
+{"timestamp": "2026-09-27T18:26:50.938860Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 1 rules."}
+{"timestamp": "2026-09-27T18:26:50.954146Z", "level": "ERROR", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Rules file not found at non_existent_fake_file.yaml"}
+{"timestamp": "2026-09-27T18:26:57.033562Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:57.033562Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:57.036196Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-ebe9e28b] matched rule: 'High Value Insurance'"}
+{"timestamp": "2026-09-27T18:26:57.036196Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-ebe9e28b] matched rule: 'Lightweight Mail'"}
+{"timestamp": "2026-09-27T18:26:57.053328Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:57.053328Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:57.054331Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-5dfcf261] matched rule: 'Lightweight Mail'"}
+{"timestamp": "2026-09-27T18:26:57.061414Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:57.061414Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:57.069729Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:57.069729Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:57.069729Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-ece6e337] matched rule: 'Liquid Handling'"}
+{"timestamp": "2026-09-27T18:26:57.082221Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:57.082221Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:57.092980Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:57.092980Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:57.198644Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 6 rules."}
+{"timestamp": "2026-09-27T18:26:57.198644Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 6 rules into memory."}
+{"timestamp": "2026-09-27T18:26:57.198644Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-99a88c9b] matched rule: 'Tie Alpha'"}
+{"timestamp": "2026-09-27T18:26:57.198644Z", "level": "INFO", "logger": "app.routing.engine", "request_id": "system", "message": "Parcel [pkg-99a88c9b] matched rule: 'Tie Beta'"}
+{"timestamp": "2026-09-27T18:29:13.089583Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:29:14.020250Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:29:14.020250Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:29:14.020250Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete. Rules loaded successfully."}
+{"timestamp": "2026-09-27T18:30:04.949388Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:30:05.936052Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:30:05.936052Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:30:05.936052Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete. Rules loaded successfully."}
+{"timestamp": "2026-09-27T18:30:06.379736Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}
+{"timestamp": "2026-09-27T18:30:07.275279Z", "level": "INFO", "logger": "app.routing.rules_loader", "request_id": "system", "message": "Successfully validated and sorted 4 rules."}
+{"timestamp": "2026-09-27T18:30:07.275279Z", "level": "INFO", "logger": "app.routing.rules_config", "request_id": "system", "message": "RulesConfig loaded 4 rules into memory."}
+{"timestamp": "2026-09-27T18:30:07.275279Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Application startup complete. Rules loaded successfully."}
+{"timestamp": "2026-09-27T18:30:11.928983Z", "level": "INFO", "logger": "app.main", "request_id": "system", "message": "Server shutting down."}

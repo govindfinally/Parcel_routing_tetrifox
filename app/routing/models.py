@@ -14,6 +14,7 @@ class Parcel(BaseModel):
     value: Decimal = Field(..., ge=0, le=10000000, decimal_places=4)
     country: Optional[str] = Field(None, pattern=r'^[A-Z]{2}$')
     
+    
     attributes: Optional[Dict[str, Union[str, int, float, bool, None]]] = Field(
         default=None, 
         max_length=20

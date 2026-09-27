@@ -33,7 +33,16 @@ def setup_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
     if not logger.handlers:
         logger.setLevel(logging.INFO)
-        handler = logging.StreamHandler()
-        handler.setFormatter(JSONFormatter())
-        logger.addHandler(handler)
+        
+        # Keep console output
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(JSONFormatter())
+        logger.addHandler(console_handler)
+        
+        # Add file output (this creates the .log file automatically)
+        file_handler = logging.FileHandler('app.log') 
+        file_handler.setFormatter(JSONFormatter())
+        logger.addHandler(file_handler)
+        
     return logger
+        

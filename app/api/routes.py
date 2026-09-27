@@ -34,85 +34,27 @@ async def route_parcel(
             status_code=422, 
             detail=format_validation_errors(e)
         )
-    except ValueError as e:
-        logger.warning(f"Sanitization failed: {str(e)}")
-        raise HTTPException(status_code=400, detail=str(e))
-
-    try:
-        engine = RoutingEngine()
-        decision = engine.route(parcel)  # <--- FIXED: using .route()
         
-        logger.info("Parcel routed successfully", extra={
-            "parcel_id": decision.parcel_id,  # <--- FIXED: using dot notation
-            "department": decision.department
-        })
+    try:
+        parcel = Parcel(**clean_payload)
+    except ValidationError as exc:
+        errors = format_validation_errors(exc)
+        logger.warning(f"Rejected request: Pydantic validation failed - {errors}")
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, 
+            detail={"errors": errors}
+        )
         
-        return decision
-    except Exception as e:
-        print("!!! ROUTING CRASHED !!!")
-        traceback.print_exc()
-        raise HTTPException(status_code=500, detail=f"ENGINE CRASH: {str(e)}")
+    decision = engine.route(parcel)
+    logger.info(f"Successfully processed routing for parcel [{decision.parcel_id}]")
+    return decision
 
-@router.post("/route/batch", dependencies=[Depends(check_rate_limit)])
-async def route_parcel_batch(
-    request: Request,
-    api_key_user: str = Depends(verify_api_key)
-):
-    """
-    Process a batch of parcels. Limits batch size to 100 to prevent blocking.
-    """
-    try:
-        raw_json = await request.json()
-    except Exception:
-        raise HTTPException(status_code=400, detail="Invalid JSON format")
-
-    if not isinstance(raw_json, list):
-        raise HTTPException(status_code=400, detail="Batch payload must be a JSON array (list)")
-
-    if len(raw_json) > 100:
-        raise HTTPException(status_code=413, detail="Batch size exceeds limit of 100 parcels.")
-
-    decisions = []
-    errors = []
-
-    try:
-        engine = RoutingEngine()
-    except Exception as e:
-        print("!!! BATCH ENGINE INIT CRASHED !!!")
-        traceback.print_exc()
-        raise HTTPException(status_code=500, detail=f"ENGINE CRASH: {str(e)}")
-
-    for index, raw_item in enumerate(raw_json):
-        try:
-            clean_data = sanitize_payload(raw_item)
-            parcel = Parcel(**clean_data)
-            decision = engine.route(parcel)  # <--- FIXED: using .route()
-            decisions.append(decision)
-        except (ValidationError, ValueError) as e:
-            error_detail = format_validation_errors(e) if isinstance(e, ValidationError) else str(e)
-            errors.append({"index": index, "error": error_detail})
-        except Exception as e:
-            print(f"!!! BATCH ROW {index} CRASHED !!!")
-            traceback.print_exc()
-            errors.append({"index": index, "error": f"ENGINE CRASH: {str(e)}"})
-
-    logger.info("Batch processed", extra={
-        "total_processed": len(decisions),
-        "total_failed": len(errors)
-    })
-
-    return {
-        "status": "completed",
-        "processed_count": len(decisions),
-        "failed_count": len(errors),
-        "results": decisions,
-        "errors": errors
-    }
-
-@router.post("/force-error", dependencies=[Depends(check_rate_limit)])
-async def force_error(api_key_user: str = Depends(verify_api_key)):
-    """
-    Simulates a critical system failure to test the global exception handler.
-    """
-    logger.error("Simulating system crash!")
-    1 / 0
+@router.post("/force-error", dependencies=[Depends(verify_api_key)])
+async def force_error_endpoint():
+    # This email will be automatically redacted in the logs
+    logger.info("User with email test.user@example.com is attempting a forced crash.")
+    
+    # Intentionally cause a crash to trigger the global exception handler
+    bad_math = 1 / 0 
+    
+    return {"message": "You will never see this."}
