@@ -51,6 +51,7 @@ async def serve_admin_ui(url_key: str):
         logger.warning(f"Unauthorized access attempt to admin UI with key: {url_key}")
         return FileResponse("app/static/unauthorized.html", status_code=status.HTTP_403_FORBIDDEN)
     logger.info(f"Admin UI accessed with valid key: {url_key} ,welcome Govind")
+    logger.warning(f"Admin page ensure to access with caution, changes made here can affect the routing rules and system behavior.")
     return FileResponse("app/static/admin.html")
 
 @app.get("/health", status_code=status.HTTP_200_OK)
