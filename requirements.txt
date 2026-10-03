@@ -5,6 +5,5 @@ pydantic
 pyyaml 
 pytest
 httpx 
-slowapi 
-python-multipart
-pydantic_settings
+
+pydantic_settings>=2.0.0

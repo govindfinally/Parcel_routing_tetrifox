@@ -1,7 +1,7 @@
 import uuid
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, status, Request
-from fastapi.responses import FileResponse # Add this import
+from fastapi.responses import FileResponse 
 
 from app.core.security import SecurityHeadersMiddleware, PayloadSizeLimitMiddleware
 from app.api.routes import router as api_router
@@ -38,12 +38,15 @@ async def request_id_middleware(request: Request, call_next):
 
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(PayloadSizeLimitMiddleware)
-app.include_router(api_router)
+app.include_router(api_router, prefix="/api/v1")
 
 # --- ADD THIS ROUTE FOR THE UI ---
-@app.get("/", include_in_schema=False)
+@app.get("/", include_in_schema=True)
 async def serve_ui():
     return FileResponse("app/static/index.html")
+@app.get("/admin")
+async def serve_admin_ui():
+    return FileResponse("app/static/admin.html")
 
 @app.get("/health", status_code=status.HTTP_200_OK)
 async def health_check():

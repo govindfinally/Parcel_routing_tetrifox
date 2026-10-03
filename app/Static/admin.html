@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules Admin - Parcel Routing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen font-sans text-gray-800 p-4 sm:p-8">
+    <div class="max-w-5xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="bg-slate-800 px-8 py-5 flex items-center justify-between">
+                <h2 class="text-white text-2xl font-bold tracking-tight">Rules Admin</h2>
+                <span class="bg-red-800 text-red-100 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">Restricted Access</span>
+            </div>
+
+            <div class="p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                <div class="lg:col-span-5">
+                    <div class="bg-amber-50 p-4 rounded-lg border border-amber-200 mb-5">
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Dev API Key</label>
+                        <input type="password" id="devApiKey" placeholder="Enter dev key" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 focus:ring-amber-500 focus:border-amber-500 sm:text-sm">
+                        <p class="mt-1 text-xs text-gray-500">This is a separate key from the operator dashboard.</p>
+                    </div>
+
+                    <form id="ruleForm" class="space-y-4">
+                        <h3 class="font-bold text-gray-700 border-b pb-2">Add / Update Rule</h3>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Rule Name</label>
+                            <input type="text" id="ruleName" required placeholder="e.g. Diwali Surge" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 sm:text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Priority (lower runs first)</label>
+                            <input type="number" id="rulePriority" required placeholder="e.g. 0" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 sm:text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Condition (Python expression)</label>
+                            <input type="text" id="ruleCondition" required placeholder="e.g. value > 500" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 sm:text-sm font-mono">
+                            <p class="mt-1 text-xs text-gray-500">Fields available: weight, value, country, fragile, plus any custom attributes.</p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Department</label>
+                            <input type="text" id="ruleDepartment" required placeholder="e.g. Priority Handling" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 sm:text-sm">
+                        </div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-slate-800 hover:bg-slate-900 transition-all">
+                            Save Rule
+                        </button>
+                    </form>
+
+                    <div id="formStatus" class="mt-4 text-sm font-medium text-center"></div>
+                </div>
+
+                <div class="lg:col-span-7 bg-gray-50 rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-gray-100 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-gray-800">Current Rules (Live)</h3>
+                        <button id="refreshBtn" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800">Refresh</button>
+                    </div>
+                    <div id="rulesList" class="flex-1 p-4 space-y-3 overflow-y-auto" style="max-height: 500px;">
+                        <p class="text-gray-400 text-sm text-center py-8">Enter dev key and click Refresh to load rules.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const devApiKeyInput = document.getElementById('devApiKey');
+        const ruleForm = document.getElementById('ruleForm');
+        const formStatus = document.getElementById('formStatus');
+        const rulesList = document.getElementById('rulesList');
+        const refreshBtn = document.getElementById('refreshBtn');
+
+        function renderRules(rules) {
+            if (!rules.length) {
+                rulesList.innerHTML = '<p class="text-gray-400 text-sm text-center py-8">No rules found.</p>';
+                return;
+            }
+            const sorted = rules.slice().sort(function(a, b) { return a.priority - b.priority; });
+            let html = '';
+            sorted.forEach(function(r) {
+                html += '<div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">' +
+                    '<div class="flex justify-between items-center mb-1">' +
+                    '<span class="font-bold text-slate-800">' + r.name + '</span>' +
+                    '<span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded">priority ' + r.priority + '</span>' +
+                    '</div>' +
+                    '<div class="text-xs font-mono text-amber-700 bg-amber-50 px-2 py-1 rounded inline-block mb-1">' + r.condition + '</div>' +
+                    '<div class="flex justify-between items-end">' +
+                    '<div class="text-sm text-gray-600">-&gt; <span class="font-semibold">' + r.department + '</span></div>' +
+                    '<button class="delete-rule-btn text-xs font-semibold text-red-600 hover:text-red-800 border border-red-200 rounded px-2 py-1" data-name="' + r.name + '">Delete</button>' +
+                    '</div>' +
+                    '</div>';
+            });
+            rulesList.innerHTML = html;
+
+            document.querySelectorAll('.delete-rule-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    deleteRule(btn.getAttribute('data-name'));
+                });
+            });
+        }
+
+        async function deleteRule(name) {
+            const key = devApiKeyInput.value;
+            if (!key) {
+                formStatus.innerHTML = '<span class="text-red-600">Enter dev key first.</span>';
+                return;
+            }
+            if (!confirm('Delete rule "' + name + '"? This cannot be undone.')) return;
+
+            formStatus.innerHTML = '<span class="text-gray-500">Deleting...</span>';
+            try {
+                const res = await fetch('/api/v1/admin/rules/' + encodeURIComponent(name), {
+                    method: 'DELETE',
+                    headers: { 'X-API-Key': key }
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    formStatus.innerHTML = '<span class="text-green-600">' + data.message + '</span>';
+                    loadRules();
+                } else {
+                    formStatus.innerHTML = '<span class="text-red-600">' + (data.detail || 'Failed to delete rule') + '</span>';
+                }
+            } catch (e) {
+                formStatus.innerHTML = '<span class="text-red-600">Network error: ' + e.message + '</span>';
+            }
+        }
+
+        async function loadRules() {
+            const key = devApiKeyInput.value;
+            if (!key) {
+                rulesList.innerHTML = '<p class="text-red-500 text-sm text-center py-8">Enter dev key first.</p>';
+                return;
+            }
+            try {
+                const res = await fetch('/api/v1/admin/rules', {
+                    headers: { 'X-API-Key': key }
+                });
+                if (!res.ok) {
+                    const err = await res.json();
+                    rulesList.innerHTML = '<p class="text-red-500 text-sm text-center py-8">' + (err.detail || 'Failed to load') + '</p>';
+                    return;
+                }
+                const data = await res.json();
+                renderRules(data);
+            } catch (e) {
+                rulesList.innerHTML = '<p class="text-red-500 text-sm text-center py-8">Network error: ' + e.message + '</p>';
+            }
+        }
+
+        refreshBtn.addEventListener('click', loadRules);
+
+        ruleForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const key = devApiKeyInput.value;
+            if (!key) {
+                formStatus.innerHTML = '<span class="text-red-600">Enter dev key first.</span>';
+                return;
+            }
+
+            const payload = {
+                name: document.getElementById('ruleName').value,
+                priority: parseInt(document.getElementById('rulePriority').value, 10),
+                condition: document.getElementById('ruleCondition').value,
+                department: document.getElementById('ruleDepartment').value
+            };
+
+            formStatus.innerHTML = '<span class="text-gray-500">Saving...</span>';
+
+            try {
+                const res = await fetch('/api/v1/admin/rules', {
+                    method: 'POST',
+                    headers: { 'X-API-Key': key, 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    formStatus.innerHTML = '<span class="text-green-600">' + data.message + '</span>';
+                    ruleForm.reset();
+                    loadRules();
+                } else {
+                    formStatus.innerHTML = '<span class="text-red-600">' + (data.detail || 'Failed to save rule') + '</span>';
+                }
+            } catch (e) {
+                formStatus.innerHTML = '<span class="text-red-600">Network error: ' + e.message + '</span>';
+            }
+        });
+    </script>
+</body>
+</html>

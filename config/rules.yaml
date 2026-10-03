@@ -1,24 +1,21 @@
 rules:
-  # Rule 1: Value > 1000 ki priority sabse high hai (Assessment requirement)
-  - name: "High Value Insurance"
-    priority: 1
-    condition: "value > 1000"
-    department: "Insurance"
-
-  # Rule 2: Up to 1 kg -> Mail
-  - name: "Lightweight Mail"
-    priority: 2
-    condition: "weight <= 1"
-    department: "Mail"
-
-  # Rule 3: 1kg to 10kg -> Regular
-  - name: "Regular Parcel"
-    priority: 3
-    condition: "weight > 1 and weight <= 10"
-    department: "Regular"
-
-  # Rule 4: Over 10kg -> Heavy
-  - name: "Heavyweight Parcel"
-    priority: 4
-    condition: "weight > 10"
-    department: "Heavy"
+- condition: fragile == True
+  department: Fragile
+  name: Fragile Item
+  priority: 0
+- condition: value > 1000
+  department: Insurance
+  name: High Value Insurance
+  priority: 1
+- condition: weight <= 1
+  department: Mail
+  name: Lightweight Mail
+  priority: 2
+- condition: weight > 1 and weight <= 10
+  department: Regular
+  name: Regular Parcel
+  priority: 3
+- condition: weight > 10
+  department: Heavy
+  name: Heavyweight Parcel
+  priority: 4

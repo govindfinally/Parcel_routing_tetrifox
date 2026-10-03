@@ -9,9 +9,14 @@ from app.core.logging import setup_logger
 
 logger = setup_logger(__name__)
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
-_rate_limit_records = defaultdict(list)
 
+_rate_limit_records = defaultdict(list)
+async def verify_dev_api_key(dev_key: str = Security(api_key_header)):
+    if not dev_key or dev_key != settings.dev_api_key:
+        raise HTTPException(status_code=401, detail="Invalid or missing Dev API Key")
+    return dev_key
 async def verify_api_key(api_key: str = Security(api_key_header)):
+    
     if not api_key or api_key != settings.api_key:
         logger.warning("Authentication failed: Invalid or missing API Key")
         raise HTTPException(status_code=401, detail="Invalid or missing API Key")

@@ -9,32 +9,26 @@
 <body class="bg-gray-100 min-h-screen font-sans text-gray-800 p-4 sm:p-8">
     <div class="max-w-5xl mx-auto">
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <!-- Header -->
             <div class="bg-indigo-700 px-8 py-5 flex items-center justify-between">
                 <h2 class="text-white text-2xl font-bold tracking-tight">Routing Engine</h2>
                 <span class="bg-indigo-800 text-indigo-100 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">v1.0 Live</span>
             </div>
-            
+
             <div class="p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
-                
-                <!-- Left Column: Input Forms (Takes up 5 columns on large screens) -->
+
                 <div class="lg:col-span-5">
-                    <!-- Tab Navigation -->
                     <div class="mb-4 flex space-x-2 border-b border-gray-200">
                         <button id="tabSingle" class="py-2 px-4 font-bold text-indigo-600 border-b-2 border-indigo-600">Single Parcel</button>
                         <button id="tabBatch" class="py-2 px-4 font-semibold text-gray-500 hover:text-gray-700 transition-colors">Batch Upload (JSON)</button>
                     </div>
-                    
-                    <!-- Single Parcel Form -->
+
                     <form id="routingForm" class="space-y-5 block">
-                        <!-- Security -->
                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
                             <label class="block text-sm font-semibold text-gray-700 mb-1">Authorization</label>
-                            <input type="password" id="apiKey" value="default-dev-secret-key" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <input type="password" id="apiKey" value="" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             <p class="mt-1 text-xs text-gray-500">API Key is required for this request.</p>
                         </div>
 
-                        <!-- Parcel Data -->
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-semibold text-gray-700 mb-1">Weight (kg)</label>
@@ -49,17 +43,21 @@
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-1">Destination Country</label>
                             <select id="country" required class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 bg-white focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm font-medium">
-                                <option value="US" selected>🇺🇸 US - United States</option>
-                                <option value="IN">🇮🇳 IN - India</option>
-                                <option value="GB">🇬🇧 GB - United Kingdom</option>
-                                <option value="CA">🇨🇦 CA - Canada</option>
-                                <option value="DE">🇩🇪 DE - Germany</option>
-                                <option value="FR">🇫🇷 FR - France</option>
-                                <option value="JP">🇯🇵 JP - Japan</option>
+                                <option value="US" selected>US - United States</option>
+                                <option value="IN">IN - India</option>
+                                <option value="GB">GB - United Kingdom</option>
+                                <option value="CA">CA - Canada</option>
+                                <option value="DE">DE - Germany</option>
+                                <option value="FR">FR - France</option>
+                                <option value="JP">JP - Japan</option>
                             </select>
                         </div>
-                        
-                        <!-- Actions -->
+                        <button type="button" id="toggleFragile" class="mt-2 w-full flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                            Mark as Fragile
+                        </button>
+                        <button type="button" id="Reloader" class="mt-2 w-full flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                            Reload Rules
+                        </button>
                         <div class="pt-2">
                             <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all shadow-md hover:shadow-lg">
                                 Process Routing
@@ -70,11 +68,10 @@
                         </div>
                     </form>
 
-                    <!-- Batch Upload Form (Hidden by default) -->
                     <div id="batchForm" class="space-y-5 hidden">
                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
                             <label class="block text-sm font-semibold text-gray-700 mb-1">Authorization</label>
-                            <input type="password" id="batchApiKey" value="default-dev-secret-key" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <input type="password" id="batchApiKey" value="" class="block w-full rounded-md border-gray-300 shadow-sm border p-2.5 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         </div>
 
                         <div class="bg-gray-50 p-6 rounded-lg border-2 border-dashed border-gray-300 text-center hover:border-indigo-500 transition-colors">
@@ -89,23 +86,21 @@
                             </div>
                             <p class="text-xs text-gray-500 mt-2">Format: [{"weight": 5, "value": 100, "country": "US"}, ...]</p>
                         </div>
-                        
+
                         <div id="fileStatus" class="text-sm font-medium text-center text-gray-700"></div>
-                        
+
                         <button id="processBatchBtn" disabled class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-gray-400 cursor-not-allowed transition-all">
                             Process Batch
                         </button>
                     </div>
                 </div>
 
-                <!-- Right Column: Results Dashboard (Takes up 7 columns on large screens) -->
                 <div class="lg:col-span-7 bg-gray-50 rounded-xl border border-gray-200 overflow-hidden flex flex-col">
                     <div class="bg-gray-100 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
                         <h3 class="text-lg font-bold text-gray-800">Routing Result</h3>
                         <span id="reqIdDisplay" class="text-xs font-mono text-gray-500">Awaiting...</span>
                     </div>
-                    
-                    <!-- Loading State -->
+
                     <div id="loading" class="hidden flex-1 flex flex-col items-center justify-center p-12 text-indigo-600">
                         <svg class="animate-spin h-10 w-10 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -114,7 +109,6 @@
                         <p class="font-medium animate-pulse">Evaluating rules...</p>
                     </div>
 
-                    <!-- Clean UI Output -->
                     <div id="cleanOutput" class="flex-1 p-6 flex flex-col justify-center items-center text-center opacity-50 transition-opacity duration-300">
                         <div class="text-gray-400 mb-2">
                             <svg class="mx-auto h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -123,9 +117,8 @@
                         </div>
                         <p class="text-gray-500 font-medium">Submit a parcel or batch to see routing decisions.</p>
                     </div>
-                    
-                    <!-- Raw JSON Toggle (Optional for debugging) -->
-                    <details class="bg-white border-t border-gray-200">
+
+                    <details class=" hidden bg-white border-t border-gray-200">
                         <summary class="cursor-pointer px-6 py-3 text-sm font-semibold text-gray-600 hover:bg-gray-50 transition-colors">View Raw JSON Response</summary>
                         <div class="p-4 bg-gray-900 overflow-x-auto">
                             <pre id="rawOutput" class="text-green-400 text-xs font-mono"></pre>
@@ -137,7 +130,6 @@
     </div>
 
     <script>
-        // Tab Switching Logic
         const tabSingle = document.getElementById('tabSingle');
         const tabBatch = document.getElementById('tabBatch');
         const formSingle = document.getElementById('routingForm');
@@ -157,7 +149,6 @@
             formSingle.classList.add('hidden');
         });
 
-        // UI Elements
         const form = document.getElementById('routingForm');
         const crashBtn = document.getElementById('forceCrashBtn');
         const cleanOutput = document.getElementById('cleanOutput');
@@ -165,13 +156,16 @@
         const loading = document.getElementById('loading');
         const reqIdDisplay = document.getElementById('reqIdDisplay');
 
-        // Batch Elements
         const fileUpload = document.getElementById('fileUpload');
         const fileStatus = document.getElementById('fileStatus');
         const processBatchBtn = document.getElementById('processBatchBtn');
-        let batchPayload = null;
 
-        // File Selection Logic
+        const fragilebtn = document.getElementById("toggleFragile");
+        const reloadbtn = document.getElementById("Reloader");
+
+        let batchPayload = null;
+        let isFragile = false;
+
         fileUpload.addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (!file) return;
@@ -181,12 +175,12 @@
                 try {
                     batchPayload = JSON.parse(e.target.result);
                     if (!Array.isArray(batchPayload)) throw new Error("JSON must be an array");
-                    
-                    fileStatus.innerHTML = `<span class="text-green-600">✓ Ready to process ${batchPayload.length} parcels</span>`;
+
+                    fileStatus.innerHTML = '<span class="text-green-600">Ready to process ' + batchPayload.length + ' parcels</span>';
                     processBatchBtn.disabled = false;
                     processBatchBtn.className = "w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all shadow-md";
                 } catch (err) {
-                    fileStatus.innerHTML = `<span class="text-red-600">✗ Invalid JSON format</span>`;
+                    fileStatus.innerHTML = '<span class="text-red-600">Invalid JSON format</span>';
                     batchPayload = null;
                     processBatchBtn.disabled = true;
                     processBatchBtn.className = "w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-gray-400 cursor-not-allowed transition-all";
@@ -195,68 +189,43 @@
             reader.readAsText(file);
         });
 
-        // UI Renderers
         function renderSuccessCard(data) {
-            return `
-                <div class="w-full text-left space-y-6 animate-fade-in-up">
-                    <div class="flex items-center justify-between">
-                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-green-100 text-green-800 border border-green-200">
-                            <svg class="mr-1.5 h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            ${data.status}
-                        </span>
-                        <span class="text-sm text-gray-500 font-mono">ID: ${data.parcel_id}</span>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
-                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Target Department</h4>
-                        <div class="text-3xl font-extrabold text-indigo-700">${data.department}</div>
-                        <p class="text-sm text-gray-600 mt-2 flex items-start">
-                            <svg class="h-5 w-5 text-indigo-400 mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            ${data.reason}
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                            <div class="text-xs text-gray-500 font-bold uppercase">Weight</div>
-                            <div class="text-xl font-semibold text-gray-800">${data.weight_kg} kg</div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                            <div class="text-xs text-gray-500 font-bold uppercase">Value</div>
-                            <div class="text-xl font-semibold text-gray-800">€ ${data.value_eur}</div>
-                        </div>
-                    </div>
-                </div>
-            `;
+            return '<div class="w-full text-left space-y-6 animate-fade-in-up">' +
+                '<div class="flex items-center justify-between">' +
+                '<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-green-100 text-green-800 border border-green-200">' + data.status + '</span>' +
+                '<span class="text-sm text-gray-500 font-mono">ID: ' + data.parcel_id + '</span>' +
+                '</div>' +
+                '<div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">' +
+                '<h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-1">Target Department</h4>' +
+                '<div class="text-3xl font-extrabold text-indigo-700">' + data.department + '</div>' +
+                '<p class="text-sm text-gray-600 mt-2">' + data.reason + '</p>' +
+                '</div>' +
+                '<div class="grid grid-cols-2 gap-4">' +
+                '<div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">' +
+                '<div class="text-xs text-gray-500 font-bold uppercase">Weight</div>' +
+                '<div class="text-xl font-semibold text-gray-800">' + data.weight_kg + ' kg</div></div>' +
+                '<div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">' +
+                '<div class="text-xs text-gray-500 font-bold uppercase">Value</div>' +
+                '<div class="text-xl font-semibold text-gray-800">EUR ' + data.value_eur + '</div></div>' +
+                '</div></div>';
         }
 
         function renderErrorCard(status, message) {
-            return `
-                <div class="w-full flex flex-col items-center justify-center text-center p-6 animate-fade-in-up">
-                    <div class="bg-red-100 p-4 rounded-full mb-4">
-                        <svg class="h-10 w-10 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Request Failed (${status})</h3>
-                    <p class="text-red-600 font-medium bg-red-50 px-4 py-2 rounded-lg border border-red-100">${message}</p>
-                </div>
-            `;
+            return '<div class="w-full flex flex-col items-center justify-center text-center p-6 animate-fade-in-up">' +
+                '<div class="bg-red-100 p-4 rounded-full mb-4"></div>' +
+                '<h3 class="text-xl font-bold text-gray-900 mb-2">Request Failed (' + status + ')</h3>' +
+                '<p class="text-red-600 font-medium bg-red-50 px-4 py-2 rounded-lg border border-red-100">' + message + '</p>' +
+                '</div>';
         }
 
-        // Core Request Logic
-        async function sendRequest(url, payload = null, isBatch = false) {
+        async function sendRequest(url, payload, isBatch) {
             cleanOutput.innerHTML = '';
             rawOutput.textContent = '';
             reqIdDisplay.textContent = 'Processing...';
-            
+
             cleanOutput.classList.add('hidden');
             loading.classList.remove('hidden');
-            
+
             const apiKey = isBatch ? document.getElementById('batchApiKey').value : document.getElementById('apiKey').value;
             const options = {
                 method: 'POST',
@@ -270,42 +239,34 @@
             try {
                 const response = await fetch(url, options);
                 const reqId = response.headers.get('X-Request-ID') || 'No ID';
-                reqIdDisplay.textContent = `Req ID: ${reqId.split('-')[0]}...`;
-                
+                reqIdDisplay.textContent = 'Req ID: ' + reqId.split('-')[0] + '...';
+
                 const data = await response.json();
-                
+
                 rawOutput.textContent = JSON.stringify(data, null, 2);
                 rawOutput.className = response.ok ? "text-green-400 text-xs font-mono" : "text-red-400 text-xs font-mono";
-                
+
                 if (response.ok) {
                     if (isBatch) {
-                        let batchHtml = `<div class="w-full text-left space-y-4 animate-fade-in-up">
-                            <h4 class="font-bold text-gray-700 border-b pb-2">Batch Results (${data.processed_count} Processed, ${data.failed_count} Failed)</h4>
-                            <div class="max-h-[400px] overflow-y-auto space-y-3 pr-2">`;
-                        
-                        data.results.forEach(res => {
-                            batchHtml += `
-                                <div class="bg-white p-3 rounded-lg border border-l-4 border-l-green-500 shadow-sm flex justify-between items-center">
-                                    <div>
-                                        <div class="text-xs text-gray-500">ID: ${res.parcel_id}</div>
-                                        <div class="font-bold text-indigo-700">${res.department}</div>
-                                    </div>
-                                    <div class="text-right text-xs">
-                                        <div>${res.weight_kg}kg | €${res.value_eur}</div>
-                                        <div class="text-green-600 font-medium">${res.status}</div>
-                                    </div>
-                                </div>`;
+                        let batchHtml = '<div class="w-full text-left space-y-4 animate-fade-in-up">' +
+                            '<h4 class="font-bold text-gray-700 border-b pb-2">Batch Results (' + data.processed_count + ' Processed, ' + data.failed_count + ' Failed)</h4>' +
+                            '<div class="max-h-[400px] overflow-y-auto space-y-3 pr-2">';
+
+                        data.results.forEach(function(res) {
+                            batchHtml += '<div class="bg-white p-3 rounded-lg border border-l-4 border-l-green-500 shadow-sm flex justify-between items-center">' +
+                                '<div><div class="text-xs text-gray-500">ID: ' + res.parcel_id + '</div>' +
+                                '<div class="font-bold text-indigo-700">' + res.department + '</div></div>' +
+                                '<div class="text-right text-xs"><div>' + res.weight_kg + 'kg | EUR ' + res.value_eur + '</div>' +
+                                '<div class="text-green-600 font-medium">' + res.status + '</div></div></div>';
                         });
 
-                        data.errors.forEach(err => {
-                            batchHtml += `
-                                <div class="bg-white p-3 rounded-lg border border-l-4 border-l-red-500 shadow-sm">
-                                    <div class="text-xs text-red-500 font-bold">Failed at Row ${err.index + 1}</div>
-                                    <div class="text-xs text-gray-700 mt-1">${JSON.stringify(err.error)}</div>
-                                </div>`;
+                        data.errors.forEach(function(err) {
+                            batchHtml += '<div class="bg-white p-3 rounded-lg border border-l-4 border-l-red-500 shadow-sm">' +
+                                '<div class="text-xs text-red-500 font-bold">Failed at Row ' + (err.index + 1) + '</div>' +
+                                '<div class="text-xs text-gray-700 mt-1">' + JSON.stringify(err.error) + '</div></div>';
                         });
-                        
-                        batchHtml += `</div></div>`;
+
+                        batchHtml += '</div></div>';
                         cleanOutput.innerHTML = batchHtml;
                     } else {
                         cleanOutput.innerHTML = renderSuccessCard(data);
@@ -317,7 +278,7 @@
                 }
             } catch (err) {
                 cleanOutput.innerHTML = renderErrorCard("Network", err.message);
-                rawOutput.textContent = `Network Error: ${err.message}`;
+                rawOutput.textContent = 'Network Error: ' + err.message;
             } finally {
                 loading.classList.add('hidden');
                 cleanOutput.classList.remove('hidden');
@@ -325,22 +286,36 @@
             }
         }
 
-        // Event Listeners
-        form.addEventListener('submit', (e) => {
+        fragilebtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            isFragile = !isFragile;
+            fragilebtn.textContent = isFragile ? "Fragile (on)" : "Mark as Fragile";
+            fragilebtn.className = isFragile
+                ? "mt-2 w-full flex justify-center py-2 px-4 border border-indigo-500 rounded-lg shadow-sm text-sm font-semibold text-indigo-700 bg-indigo-50 transition-colors"
+                : "mt-2 w-full flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 transition-colors";
+        });
+
+        reloadbtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            sendRequest('/api/v1/route/reload', null, false);
+        });
+
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
             const payload = {
                 weight: parseFloat(document.getElementById('weight').value),
                 value: parseFloat(document.getElementById('value').value),
-                country: document.getElementById('country').value
+                country: document.getElementById('country').value,
+                fragile: isFragile
             };
             sendRequest('/api/v1/route', payload, false);
         });
 
-        processBatchBtn.addEventListener('click', () => {
+        processBatchBtn.addEventListener('click', function() {
             if (batchPayload) sendRequest('/api/v1/route/batch', batchPayload, true);
         });
 
-        crashBtn.addEventListener('click', () => {
+        crashBtn.addEventListener('click', function() {
             sendRequest('/api/v1/force-error', null, false);
         });
     </script>
@@ -350,22 +325,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in-up { animation: fadeInUp 0.4s ease-out forwards; }
-        
-        /* Custom scrollbar for batch results */
-        .overflow-y-auto::-webkit-scrollbar {
-            width: 6px;
-        }
-        .overflow-y-auto::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-            border-radius: 4px;
-        }
-        .overflow-y-auto::-webkit-scrollbar-thumb {
-            background: #c7c7cc; 
-            border-radius: 4px;
-        }
-        .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-            background: #a1a1aa; 
-        }
+
+        .overflow-y-auto::-webkit-scrollbar { width: 6px; }
+        .overflow-y-auto::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+        .overflow-y-auto::-webkit-scrollbar-thumb { background: #c7c7cc; border-radius: 4px; }
+        .overflow-y-auto::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
     </style>
 </body>
 </html>

@@ -16,7 +16,7 @@ class RoutingEngine:
             "value": float(parcel.value),
             "country": parcel.country,
             "fragile": getattr(parcel, 'fragile', False),
-            "is_liquid": getattr(parcel, 'is_liquid', False)
+            
         }
         
         if parcel.attributes:

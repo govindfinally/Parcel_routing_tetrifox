@@ -13,6 +13,8 @@ class Parcel(BaseModel):
     weight: Decimal = Field(..., gt=0, le=1000, decimal_places=6)
     value: Decimal = Field(..., ge=0, le=10000000, decimal_places=4)
     country: Optional[str] = Field(None, pattern=r'^[A-Z]{2}$')
+    fragile: Optional[bool] = Field(None)
+    isliquid: Optional[bool] = Field(None)
     
     
     attributes: Optional[Dict[str, Union[str, int, float, bool, None]]] = Field(
