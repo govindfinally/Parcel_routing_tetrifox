@@ -21,4 +21,4 @@ class MetricsMonitor:
                 f"Total Errors: {self.error_count} | Total Requests: {self.request_count}"
             )
 
-monitor = MetricsMonitor()
+monitor = MetricsMonitor() 

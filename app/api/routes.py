@@ -73,6 +73,7 @@ async def force_error_endpoint():
     return {"message": "You will never see this."}
 @router.get("/admin/rules", dependencies=[Depends(verify_dev_api_key)])
 async def get_routing_rules(engine: RoutingEngine = Depends(get_Routing_engine)):
+    
     """
     Retrieve the current routing rules.
     """
@@ -83,12 +84,9 @@ async def get_routing_rules(engine: RoutingEngine = Depends(get_Routing_engine))
         logger.error(f"Failed to retrieve routing rules: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
-@router.post("/admin/rules", dependencies=[Depends(check_rate_limit)])
+@router.post("/admin/rules", dependencies=[Depends(check_rate_limit)],include_in_schema=False)
 async def upsert_rule(new_rule: dict, dev_key: str = Depends(verify_dev_api_key)):
-    """
-    PM ek naya rule bhejta hai: {"name": ..., "priority": ..., "condition": ..., "department": ...}
-    Agar wahi naam ka rule already hai, update hota hai; nahi toh add hota hai.
-    """
+
     with open(RULES_FILE, "r") as f:
         data = yaml.safe_load(f)
 
@@ -110,7 +108,7 @@ async def upsert_rule(new_rule: dict, dev_key: str = Depends(verify_dev_api_key)
     RulesConfig.load(RULES_FILE)         # in-memory cache refresh
 
     return {"status": "success", "message": f"Rule '{new_rule['name']}' saved and reloaded."}
-@router.delete("/admin/rules/{rule_name}", dependencies=[Depends(check_rate_limit)])
+@router.delete("/admin/rules/{rule_name}", dependencies=[Depends(check_rate_limit)],include_in_schema=False)
 async def delete_rule(rule_name: str, dev_key: str = Depends(verify_dev_api_key)):
     """
     PM diye gaye naam ka rule delete karta hai rules.yaml se.

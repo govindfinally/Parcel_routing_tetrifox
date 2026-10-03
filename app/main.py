@@ -9,6 +9,7 @@ from app.routing.rules_config import RulesConfig
 from app.core.logging import setup_logger, request_id_ctx_var
 from app.core.errors import global_exception_handler
 from app.core.monitoring import monitor
+from app.core.settings import settings
 
 logger = setup_logger(__name__)
 
@@ -44,8 +45,12 @@ app.include_router(api_router, prefix="/api/v1")
 @app.get("/", include_in_schema=True)
 async def serve_ui():
     return FileResponse("app/static/index.html")
-@app.get("/admin")
-async def serve_admin_ui():
+@app.get("/admin/{url_key}", include_in_schema=False)
+async def serve_admin_ui(url_key: str):
+    if url_key != settings.my_secret_admin_key:
+        logger.warning(f"Unauthorized access attempt to admin UI with key: {url_key}")
+        return FileResponse("app/static/unauthorized.html", status_code=status.HTTP_403_FORBIDDEN)
+    logger.info(f"Admin UI accessed with valid key: {url_key} ,welcome Govind")
     return FileResponse("app/static/admin.html")
 
 @app.get("/health", status_code=status.HTTP_200_OK)

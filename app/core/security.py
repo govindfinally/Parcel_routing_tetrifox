@@ -21,6 +21,12 @@ async def verify_api_key(api_key: str = Security(api_key_header)):
         logger.warning("Authentication failed: Invalid or missing API Key")
         raise HTTPException(status_code=401, detail="Invalid or missing API Key")
     return api_key
+async def verify_my_secret_admin_key(request:Request):
+    expected_path=f"/admin{settings.my_secret_admin_key}"
+    if request.url.path != expected_path:
+        logger.warning("Authentication failed: Invalid or missing Admin Key" and f"Expected path: {expected_path}, Actual path: {request.url.path}")
+        raise HTTPException(status_code=401, detail="Invalid or missing Admin Key")
+    return "welcome Govind"
 
 async def check_rate_limit(request: Request):
     client_ip = request.client.host if request.client else "unknown"
